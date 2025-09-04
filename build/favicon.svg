@@ -1,0 +1,22 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#2E86AB" stroke="#1A5F7A" stroke-width="2"/>
+  
+  <!-- Book icon -->
+  <g transform="translate(8, 8)">
+    <!-- Book cover -->
+    <rect x="1" y="3" width="14" height="10" rx="1" fill="#F8F9FA" stroke="#2E86AB" stroke-width="1"/>
+    
+    <!-- Book pages -->
+    <rect x="2" y="4" width="12" height="8" fill="#FFFFFF"/>
+    
+    <!-- Book spine -->
+    <rect x="1" y="3" width="2" height="10" fill="#1A5F7A"/>
+    
+    <!-- Text lines on book -->
+    <line x1="4" y1="6" x2="10" y2="6" stroke="#2E86AB" stroke-width="0.5"/>
+    <line x1="4" y1="7.5" x2="9" y2="7.5" stroke="#2E86AB" stroke-width="0.5"/>
+    <line x1="4" y1="9" x2="11" y2="9" stroke="#2E86AB" stroke-width="0.5"/>
+    <line x1="4" y1="10.5" x2="8" y2="10.5" stroke="#2E86AB" stroke-width="0.5"/>
+  </g>
+</svg>
