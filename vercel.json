@@ -9,6 +9,8 @@
   ],
   "routes": [
     { "src": "/manifest.json", "dest": "/manifest.json" },
+    { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
     { "src": "/service-worker.js", "dest": "/service-worker.js" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
