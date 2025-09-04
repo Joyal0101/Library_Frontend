@@ -1,0 +1,61 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2E86AB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A5F7A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E9ECEF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main background circle -->
+  <circle cx="50" cy="50" r="40" fill="url(#bgGradient)" stroke="#1A5F7A" stroke-width="3"/>
+  
+  <!-- Book stack icon -->
+  <g transform="translate(20, 20)">
+    <!-- Book 1 (back) -->
+    <rect x="5" y="15" width="50" height="35" rx="3" fill="#1A5F7A" opacity="0.8"/>
+    
+    <!-- Book 2 (middle) -->
+    <rect x="10" y="10" width="50" height="35" rx="3" fill="#2E86AB" opacity="0.9"/>
+    
+    <!-- Book 3 (front) -->
+    <rect x="15" y="5" width="50" height="35" rx="3" fill="url(#bookGradient)" stroke="#2E86AB" stroke-width="2"/>
+    
+    <!-- Book pages -->
+    <rect x="18" y="8" width="44" height="29" fill="#FFFFFF"/>
+    
+    <!-- Text lines on front book -->
+    <line x1="25" y1="15" x2="50" y2="15" stroke="#2E86AB" stroke-width="1.5"/>
+    <line x1="25" y1="20" x2="45" y2="20" stroke="#2E86AB" stroke-width="1.5"/>
+    <line x1="25" y1="25" x2="55" y2="25" stroke="#2E86AB" stroke-width="1.5"/>
+    <line x1="25" y1="30" x2="40" y2="30" stroke="#2E86AB" stroke-width="1.5"/>
+    
+    <!-- Book spine details -->
+    <rect x="15" y="5" width="8" height="35" fill="#1A5F7A"/>
+    <line x1="19" y1="10" x2="19" y2="35" stroke="#FFFFFF" stroke-width="1"/>
+  </g>
+  
+  <!-- Library name -->
+  <text x="120" y="40" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#2E86AB">
+    Marchy's
+  </text>
+  <text x="120" y="65" font-family="Georgia, serif" font-size="24" font-weight="normal" fill="#1A5F7A">
+    Library
+  </text>
+  
+  <!-- Tagline -->
+  <text x="120" y="80" font-family="Arial, sans-serif" font-size="12" font-style="italic" fill="#6C757D">
+    Knowledge • Learning • Community
+  </text>
+  
+  <!-- Decorative elements -->
+  <circle cx="280" cy="20" r="4" fill="#FFD23F" opacity="0.9"/>
+  <circle cx="285" cy="35" r="3" fill="#FF6B6B" opacity="0.9"/>
+  <circle cx="275" cy="50" r="3.5" fill="#4ECDC4" opacity="0.9"/>
+  <circle cx="285" cy="65" r="2.5" fill="#95E1D3" opacity="0.9"/>
+  <circle cx="275" cy="80" r="3" fill="#F38BA8" opacity="0.9"/>
+</svg>
