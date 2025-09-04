@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 const MyBooks = () => {
@@ -7,12 +7,9 @@ const MyBooks = () => {
   const [error, setError] = useState('');
   const [statusFilter, setStatusFilter] = useState('borrowed');
   const [actionLoading, setActionLoading] = useState({});
+    
 
-  useEffect(() => {
-    fetchMyBooks();
-  }, [statusFilter]);
-
-  const fetchMyBooks = async () => {
+   const fetchMyBooks = async () => {
     try {
       setLoading(true);
       setError('');
@@ -29,6 +26,13 @@ const MyBooks = () => {
       setLoading(false);
     }
   };
+
+  const fetchMyBooksCallback = useCallback(fetchMyBooks, [statusFilter]);   
+
+  useEffect(() => {
+    fetchMyBooksCallback();
+  }, [fetchMyBooksCallback]);
+
 
   const handleReturnBook = async (bookId) => {
     try {

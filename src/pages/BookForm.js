@@ -16,27 +16,28 @@ const BookForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  
 
   useEffect(() => {
     if (id) {
       setIsEditing(true);
+      const loadBook = async () => {
+      const result = await fetchBook(id);
+      if (result.success) {
+        const book = result.book;
+        setFormData({
+          title: book.title,
+          author: book.author,
+          isbn: book.isbn,
+          quantity: book.quantity
+        });
+      }
+    };
       loadBook();
     }
-  }, [id]);
+  }, [id,fetchBook]);
 
-  const loadBook = async () => {
-    const result = await fetchBook(id);
-    if (result.success) {
-      const book = result.book;
-      setFormData({
-        title: book.title,
-        author: book.author,
-        isbn: book.isbn,
-        quantity: book.quantity
-      });
-    }
-  };
-
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({

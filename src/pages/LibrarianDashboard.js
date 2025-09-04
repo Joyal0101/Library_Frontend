@@ -16,7 +16,7 @@ const LibrarianDashboard = () => {
   useEffect(() => {
     fetchBooks(1, '');
     fetchStats();
-  }, []);
+  }, [fetchBooks]);
 
   const fetchStats = async () => {
     try {

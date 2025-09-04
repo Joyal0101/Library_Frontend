@@ -6,8 +6,8 @@ import { useBooks } from '../contexts/BookContext';
 const BookDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { user, isLibrarian } = useAuth();
-  const { fetchBook, borrowBook, returnBook, loading, error } = useBooks();
+  const { isLibrarian } = useAuth();
+  const { fetchBook, borrowBook, loading, error } = useBooks();
   
   const [book, setBook] = useState(null);
   const [actionLoading, setActionLoading] = useState(false);
@@ -42,23 +42,23 @@ const BookDetails = () => {
     setActionLoading(false);
   };
 
-  const handleReturn = async () => {
-    if (!book) return;
+  // const handleReturn = async () => {
+  //   if (!book) return;
 
-    setActionLoading(true);
-    setActionMessage('');
+  //   setActionLoading(true);
+  //   setActionMessage('');
     
-    const result = await returnBook(book._id);
+  //   const result = await returnBook(book._id);
     
-    if (result.success) {
-      setBook(prev => ({ ...prev, available: prev.available + 1 }));
-      setActionMessage('Book returned successfully!');
-    } else {
-      setActionMessage(result.message || 'Failed to return book');
-    }
+  //   if (result.success) {
+  //     setBook(prev => ({ ...prev, available: prev.available + 1 }));
+  //     setActionMessage('Book returned successfully!');
+  //   } else {
+  //     setActionMessage(result.message || 'Failed to return book');
+  //   }
     
-    setActionLoading(false);
-  };
+  //   setActionLoading(false);
+  // };
 
   const handleEdit = () => {
     navigate(`/librarian/book/edit/${id}`);

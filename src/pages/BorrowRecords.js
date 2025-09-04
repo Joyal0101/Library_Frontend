@@ -9,26 +9,29 @@ const BorrowRecords = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [statusFilter, setStatusFilter] = useState('');
 
-  useEffect(() => {
-    fetchBorrowRecords();
-  }, [currentPage, statusFilter]);
 
-  const fetchBorrowRecords = async () => {
+  
+  useEffect(() => {
+      const fetchBorrowRecords = async () => {
     try {
       setLoading(true);
       setError('');
+      // const { currentPages } = response.data;
       
-      const params = {
-        page: currentPage,
-        limit: 10
-      };
+        const params = {
+          page: currentPage,
+          limit: 10
+        };
+      const response = await axios.get('/api/borrow/all', { params });
       
+      const { borrows, totalPages } = response.data;
+      
+      
+     
       if (statusFilter) {
         params.status = statusFilter;
       }
       
-      const response = await axios.get('/api/borrow/all', { params });
-      const { borrows, totalPages, currentPage, total } = response.data;
       
       setBorrows(borrows);
       setTotalPages(totalPages);
@@ -40,6 +43,10 @@ const BorrowRecords = () => {
       setLoading(false);
     }
   };
+    fetchBorrowRecords();
+  }, [currentPage, statusFilter]);
+  
+  
 
   const handleStatusFilter = (status) => {
     setStatusFilter(status);
